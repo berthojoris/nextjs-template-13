@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" data-kt-theme="true" data-kt-theme-mode="light" dir="ltr">
+    <html lang="en" className="h-full" data-kt-theme="true" data-kt-theme-mode="light" dir="ltr" suppressHydrationWarning>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="/template/assets/vendors/apexcharts/apexcharts.css" rel="stylesheet" />

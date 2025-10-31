@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function Home() {
+function HomeContent() {
   useEffect(() => {
     // Initialize theme from original template
     const defaultThemeMode = 'light';
@@ -23,7 +23,10 @@ export default function Home() {
           : 'light';
       }
 
-      document.documentElement.classList.add(themeMode);
+      // Only add class if not already present (avoid unnecessary reflows)
+      if (!document.documentElement.classList.contains(themeMode)) {
+        document.documentElement.classList.add(themeMode);
+      }
     }
   }, []);
 
@@ -538,3 +541,6 @@ export default function Home() {
     </>
   );
 }
+
+// Export the component - wrapper will handle hydration
+export default HomeContent;
