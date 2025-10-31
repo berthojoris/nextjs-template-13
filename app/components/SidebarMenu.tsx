@@ -2,7 +2,7 @@
 
 import ActiveLink from './ActiveLink';
 import { useAccordion } from './hooks/useAccordion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface AccordionItem {
   id: string;
