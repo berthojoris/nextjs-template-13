@@ -1,5 +1,3 @@
-'use client';
-
 import Header from '../components/Header';
 import SubHeader from '../components/SubHeader';
 import SidebarMenu from '../components/SidebarMenu';
