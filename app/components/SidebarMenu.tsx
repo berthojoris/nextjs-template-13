@@ -2,6 +2,7 @@
 
 import ActiveLink from './ActiveLink';
 import { useAccordion } from './hooks/useAccordion';
+import { useEffect } from 'react';
 
 interface AccordionItem {
   id: string;
@@ -61,6 +62,13 @@ function AccordionSection({ item, isOpen, onToggle, setContentRef }: {
 }
 
 export default function SidebarMenu() {
+  const [isClient, setIsClient] = useState(false);
+  
+  // Ensure client-side rendering matches server-side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const accordionItems: AccordionItem[] = [
     {
       id: 'general',
