@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import ActiveLink from './ActiveLink';
+
 export default function SidebarMenu() {
   return (
     <aside suppressHydrationWarning className="top-(--header-height) h-full transition-all duration-300 flex flex-col items-stretch flex-shrink-0 w-(--sidebar-width) in-data-[sidebar-open=false]:-start-full [--kt-drawer-enable:true] lg:[--kt-drawer-enable:false]" data-kt-drawer="true" data-kt-drawer-class="kt-drawer kt-drawer-start top-0 bottom-0" id="sidebar">
@@ -31,35 +34,35 @@ export default function SidebarMenu() {
                 <div className="kt-accordion-wrapper">
                   <ul suppressHydrationWarning className="kt-accordion-menu gap-px" data-kt-accordion="true">
                     <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
-                      <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
+                      <ActiveLink href="/dashboard" className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5">
                         <i className="ki-filled ki-chart text-base kt-accordion-selected:text-muted-foreground"></i>
                         Dashboards
-                      </a>
+                      </ActiveLink>
                     </li>
-                    <li suppressHydrationWarning className="kt-accordion-menu-item selected" data-kt-accordion-item="true">
-                      <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="html/layout-13/index.html">
+                    <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                      <ActiveLink href="/profiles" className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5">
                         <i className="ki-filled ki-users text-base kt-accordion-selected:text-muted-foreground"></i>
                         Public Profiles
-                      </a>
+                      </ActiveLink>
                     </li>
                     <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
-                      <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
+                      <ActiveLink href="/account-settings" className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5">
                         <i className="ki-filled ki-user-tick text-base kt-accordion-selected:text-muted-foreground"></i>
                         Account Settings
-                      </a>
+                      </ActiveLink>
                     </li>
                     <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
-                      <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
+                      <ActiveLink href="/network" className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5">
                         <i className="ki-filled ki-setting-3 text-base kt-accordion-selected:text-muted-foreground"></i>
                         Network
                         <span className="kt-badge kt-badge-xs kt-badge-light kt-badge-destructive">Beta</span>
-                      </a>
+                      </ActiveLink>
                     </li>
                     <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
-                      <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
+                      <ActiveLink href="/authentication" className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5">
                         <i className="ki-filled ki-lock text-base kt-accordion-selected:text-muted-foreground"></i>
                         Authentication
-                      </a>
+                      </ActiveLink>
                     </li>
                   </ul>
                 </div>
