@@ -2,7 +2,6 @@
 
 import ActiveLink from './ActiveLink';
 import { useAccordion } from './hooks/useAccordion';
-import { useEffect, useState } from 'react';
 
 interface AccordionItem {
   id: string;
@@ -62,13 +61,6 @@ function AccordionSection({ item, isOpen, onToggle, setContentRef }: {
 }
 
 export default function SidebarMenu() {
-  const [isClient, setIsClient] = useState(false);
-  
-  // Ensure client-side rendering matches server-side
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   const accordionItems: AccordionItem[] = [
     {
       id: 'general',
@@ -221,7 +213,7 @@ export default function SidebarMenu() {
   });
 
   return (
-    <aside className="top-(--header-height) h-full transition-all duration-300 flex flex-col items-stretch flex-shrink-0 w-(--sidebar-width) in-data-[sidebar-open=false]:-start-full [--kt-drawer-enable:true] lg:[--kt-drawer-enable:false]" data-kt-drawer="true" data-kt-drawer-class="kt-drawer kt-drawer-start top-0 bottom-0" id="sidebar">
+    <aside className="top-(--header-height) h-full transition-all duration-300 flex flex-col items-stretch flex-shrink-0 w-(--sidebar-width) in-data-[sidebar-open=false]:-start-full [--kt-drawer-enable:true] lg:[--kt-drawer-enable:false]" data-kt-drawer="true" data-kt-drawer-class="kt-drawer kt-drawer-start top-0 bottom-0" id="sidebar" suppressHydrationWarning>
       <div className="flex items-center justify-between w-full px-5 h-(--sidebar-header-height) border-b border-border shrink-0">
         <a className="flex items-center gap-2" data-discover="true" href="#">
           <button className="cursor-pointer group focus-visible:outline-hidden inline-flex items-center justify-center has-data-[arrow=true]:justify-between whitespace-nowrap font-medium ring-offset-background transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0 hover:bg-primary/90 data-[state=open]:bg-primary/90 rounded-md gap-1.25 text-xs [&_svg:not([class*=size-])]:size-3.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shrink-0 shadow-xs shadow-black/5 w-7 h-7 p-0 [[&_svg:not([class*=size-])]:size-3.5 bg-teal-600 text-white" data-slot="button">
