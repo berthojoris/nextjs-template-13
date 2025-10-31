@@ -30,6 +30,11 @@ npm run lint
 - `app/page.tsx`: Home page component
 - `app/globals.css`: Global styles with Tailwind CSS v4 and CSS variables for theming
 
+### Rendering Strategy
+- **IMPORTANT**: Every page created on this project should use SSG (Static Site Generation) rendering
+- Avoid using `'use client'` directives at the page level unless absolutely necessary
+- Prefer server components by default for optimal performance
+
 ### TypeScript Configuration
 - Path alias `@/*` maps to project root (tsconfig.json:22)
 - Strict mode enabled

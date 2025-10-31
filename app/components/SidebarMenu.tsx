@@ -20,7 +20,7 @@ function AccordionSection({ item, isOpen, onToggle, setContentRef }: {
     <div className="border-b border-border/50">
       <button
         onClick={onToggle}
-        className="w-full text-left px-2 py-2 hover:bg-muted/50 transition-colors duration-200 focus:outline-none focus:bg-muted/50"
+        className="w-full text-left px-2 py-2 hover:bg-muted hover:text-foreground transition-colors duration-200 focus:outline-none focus:bg-muted"
         aria-expanded={isOpen}
         aria-controls={`accordion-content-${item.id}`}
         id={`accordion-toggle-${item.id}`}
@@ -69,32 +69,32 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <ActiveLink href="/dashboard" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <ActiveLink href="/dashboard" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-chart text-base"></i>
               Dashboards
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink href="/profiles" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <ActiveLink href="/profiles" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-users text-base"></i>
               Public Profiles
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink href="/account-settings" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <ActiveLink href="/account-settings" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-user-tick text-base"></i>
               Account Settings
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink href="/network" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <ActiveLink href="/network" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-setting-3 text-base"></i>
               Network
               <span className="ml-auto px-1.5 py-0.5 text-xs bg-destructive/10 text-destructive rounded-md">Beta</span>
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink href="/authentication" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <ActiveLink href="/authentication" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-lock text-base"></i>
               Authentication
             </ActiveLink>
@@ -108,19 +108,19 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-plus text-base"></i>
               Create a custom feed
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
               New order received
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
               New customer registered
             </a>
@@ -134,25 +134,25 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-plus text-base"></i>
               Create a community
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <img alt="Designers Hub" className="size-4 rounded-sm" src="/template/assets/media/brand-logos/invision.svg" />
               Designers Hub
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <img alt="React Js" className="size-4 rounded-sm" src="/template/assets/media/brand-logos/react.svg" />
               React Js
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <img alt="Node Js" className="size-4 rounded-sm" src="/template/assets/media/brand-logos/nodejs.svg" />
               Node Js
             </a>
@@ -166,38 +166,38 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-setting-4 text-base"></i>
               About Metronic
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-notification text-base"></i>
               Advertise
               <span className="ml-auto px-1.5 py-0.5 text-xs bg-green-100 text-green-700 rounded-md">Pro</span>
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-message-question text-base"></i>
               Help
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-file-sheet text-base"></i>
               Blog
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-user text-base"></i>
               Careers
             </a>
           </li>
           <li>
-            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted/50 transition-colors">
+            <a href="#" className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors">
               <i className="ki-filled ki-notification-status text-base"></i>
               Press
             </a>
