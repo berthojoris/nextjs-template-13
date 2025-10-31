@@ -9,10 +9,12 @@ function HomeContent() {
     let themeMode;
 
     if (document.documentElement) {
-      if (localStorage.getItem('kt-theme')) {
-        themeMode = localStorage.getItem('kt-theme');
+      const storedTheme = localStorage.getItem('kt-theme');
+      if (storedTheme) {
+        themeMode = storedTheme;
       } else if (document.documentElement.hasAttribute('data-kt-theme-mode')) {
-        themeMode = document.documentElement.getAttribute('data-kt-theme-mode');
+        const themeAttr = document.documentElement.getAttribute('data-kt-theme-mode');
+        themeMode = themeAttr || defaultThemeMode;
       } else {
         themeMode = defaultThemeMode;
       }
@@ -85,7 +87,7 @@ function HomeContent() {
                   </button>
                 </div>
                 <div className="flex items-center gap-5">
-                  <div data-kt-dropdown="true" data-kt-dropdown-offset="10px, 10px" data-kt-dropdown-offset-rtl="-20px, 10px" data-kt-dropdown-placement="bottom-end" data-kt-dropdown-placement-rtl="bottom-start" data-kt-dropdown-trigger="click">
+                  <div suppressHydrationWarning data-kt-dropdown="true" data-kt-dropdown-offset="10px, 10px" data-kt-dropdown-offset-rtl="-20px, 10px" data-kt-dropdown-placement="bottom-end" data-kt-dropdown-placement-rtl="bottom-start" data-kt-dropdown-trigger="click">
                     <link as="image" href="/template/assets/media/avatars/300-2.png" rel="preload" />
                     <div className="kt-avatar size-7" data-kt-dropdown-toggle="true">
                       <div className="kt-avatar-image">
@@ -125,7 +127,7 @@ function HomeContent() {
                         <li>
                           <div className="kt-dropdown-menu-separator"></div>
                         </li>
-                        <li data-kt-dropdown="true" data-kt-dropdown-placement="right-start" data-kt-dropdown-trigger="hover">
+                        <li suppressHydrationWarning data-kt-dropdown="true" data-kt-dropdown-placement="right-start" data-kt-dropdown-trigger="hover">
                           <button className="kt-dropdown-menu-toggle" data-kt-dropdown-toggle="true">
                             <i className="ki-filled ki-notification-status"></i>
                             Mute notifications
@@ -220,7 +222,7 @@ function HomeContent() {
             <div className="flex grow rounded-xl bg-background border border-input m-2.5 mt-0">
               <div className="hidden lg:flex flex-col items-stretch shrink-0 w-(--sidebar-width) border-e border-border bg-muted/40">
                 {/* Sidebar */}
-                <aside className="top-(--header-height) h-full transition-all duration-300 flex flex-col items-stretch flex-shrink-0 w-(--sidebar-width) in-data-[sidebar-open=false]:-start-full [--kt-drawer-enable:true] lg:[--kt-drawer-enable:false]" data-kt-drawer="true" data-kt-drawer-class="kt-drawer kt-drawer-start top-0 bottom-0" id="sidebar">
+                <aside suppressHydrationWarning className="top-(--header-height) h-full transition-all duration-300 flex flex-col items-stretch flex-shrink-0 w-(--sidebar-width) in-data-[sidebar-open=false]:-start-full [--kt-drawer-enable:true] lg:[--kt-drawer-enable:false]" data-kt-drawer="true" data-kt-drawer-class="kt-drawer kt-drawer-start top-0 bottom-0" id="sidebar">
                   <div className="flex items-center justify-between w-full px-5 h-(--sidebar-header-height) border-b border-border shrink-0">
                     <a className="flex items-center gap-2" data-discover="true" href="#">
                       <button className="cursor-pointer group focus-visible:outline-hidden inline-flex items-center justify-center has-data-[arrow=true]:justify-between whitespace-nowrap font-medium ring-offset-background transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0 hover:bg-primary/90 data-[state=open]:bg-primary/90 rounded-md gap-1.25 text-xs [&_svg:not([class*=size-])]:size-3.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shrink-0 shadow-xs shadow-black/5 w-7 h-7 p-0 [[&_svg:not([class*=size-])]:size-3.5 bg-teal-600 text-white" data-slot="button">
@@ -237,43 +239,43 @@ function HomeContent() {
                   {/* Sidebar Menu */}
                   <div className="overflow-y-auto grow flex my-2.5 px-2.5">
                     <div className="flex flex-col grow space-y-7.5">
-                      <div className="kt-accordion" data-kt-accordion="true" data-kt-accordion-expand-all="true">
+                      <div suppressHydrationWarning className="kt-accordion" data-kt-accordion="true" data-kt-accordion-expand-all="true">
                         {/* General Section */}
-                        <div className="kt-accordion-item active" data-kt-accordion-item="true">
-                          <button aria-controls="accordion_content_0" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_0">
+                        <div suppressHydrationWarning className="kt-accordion-item active" data-kt-accordion-item="true">
+                          <button suppressHydrationWarning aria-controls="accordion_content_0" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_0">
                             <span className="kt-accordion-title">
                               <div className="px-2 pb-2 text-xs font-normal text-muted-foreground leading-none">General</div>
                             </span>
                           </button>
-                          <div aria-labelledby="accordion_toggle_0" className="kt-accordion-content" id="accordion_content_0">
+                          <div suppressHydrationWarning aria-labelledby="accordion_toggle_0" className="kt-accordion-content" id="accordion_content_0">
                             <div className="kt-accordion-wrapper">
-                              <ul className="kt-accordion-menu gap-px" data-kt-accordion="true">
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                              <ul suppressHydrationWarning className="kt-accordion-menu gap-px" data-kt-accordion="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-chart text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Dashboards
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item selected" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item selected" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="html/layout-13/index.html">
                                     <i className="ki-filled ki-users text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Public Profiles
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-user-tick text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Account Settings
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-setting-3 text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Network
                                     <span className="kt-badge kt-badge-xs kt-badge-light kt-badge-destructive">Beta</span>
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-lock text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Authentication
@@ -284,8 +286,8 @@ function HomeContent() {
                           </div>
                         </div>
                         {/* Custom Feed Section */}
-                        <div className="kt-accordion-item active" data-kt-accordion-item="true">
-                          <button aria-controls="accordion_content_1" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_1">
+                        <div suppressHydrationWarning className="kt-accordion-item active" data-kt-accordion-item="true">
+                          <button suppressHydrationWarning aria-controls="accordion_content_1" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_1">
                             <span className="kt-accordion-title">
                               <div className="px-2 pb-2 text-xs font-normal text-muted-foreground leading-none">Custom Feed</div>
                             </span>
@@ -299,16 +301,16 @@ function HomeContent() {
                               </svg>
                             </span>
                           </button>
-                          <div aria-labelledby="accordion_toggle_1" className="kt-accordion-content" id="accordion_content_1">
+                          <div suppressHydrationWarning aria-labelledby="accordion_toggle_1" className="kt-accordion-content" id="accordion_content_1">
                             <div className="kt-accordion-wrapper">
-                              <ul className="kt-accordion-menu gap-px" data-kt-accordion="true">
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                              <ul suppressHydrationWarning className="kt-accordion-menu gap-px" data-kt-accordion="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-plus text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Create a custom feed
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <div className="flex items-center justify-center w-4">
                                       <div className="size-1.5 rounded-full bg-green-500"></div>
@@ -316,7 +318,7 @@ function HomeContent() {
                                     New order received
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <div className="flex items-center justify-center w-4">
                                       <div className="size-1.5 rounded-full bg-green-500"></div>
@@ -329,8 +331,8 @@ function HomeContent() {
                           </div>
                         </div>
                         {/* Communities Section */}
-                        <div className="kt-accordion-item active" data-kt-accordion-item="true">
-                          <button aria-controls="accordion_content_2" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_2">
+                        <div suppressHydrationWarning className="kt-accordion-item active" data-kt-accordion-item="true">
+                          <button suppressHydrationWarning aria-controls="accordion_content_2" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_2">
                             <span className="kt-accordion-title">
                               <div className="px-2 pb-2 text-xs font-normal text-muted-foreground leading-none">Communities</div>
                             </span>
@@ -344,28 +346,28 @@ function HomeContent() {
                               </svg>
                             </span>
                           </button>
-                          <div aria-labelledby="accordion_toggle_2" className="kt-accordion-content" id="accordion_content_2">
+                          <div suppressHydrationWarning aria-labelledby="accordion_toggle_2" className="kt-accordion-content" id="accordion_content_2">
                             <div className="kt-accordion-wrapper">
-                              <ul className="kt-accordion-menu gap-px" data-kt-accordion="true">
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                              <ul suppressHydrationWarning className="kt-accordion-menu gap-px" data-kt-accordion="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-plus text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Create a community
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <img alt="Designers Hub" className="size-4 rounded-sm" src="/template/assets/media/brand-logos/invision.svg" />
                                     Designers Hub
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <img alt="React Js" className="size-4 rounded-sm" src="/template/assets/media/brand-logos/react.svg" />
                                     React Js
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:text-muted-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <img alt="Node Js" className="size-4 rounded-sm" src="/template/assets/media/brand-logos/nodejs.svg" />
                                     Node Js
@@ -376,8 +378,8 @@ function HomeContent() {
                           </div>
                         </div>
                         {/* Resources Section */}
-                        <div className="kt-accordion-item active" data-kt-accordion-item="true">
-                          <button aria-controls="accordion_content_3" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_3">
+                        <div suppressHydrationWarning className="kt-accordion-item active" data-kt-accordion-item="true">
+                          <button suppressHydrationWarning aria-controls="accordion_content_3" className="kt-accordion-toggle" data-kt-accordion-toggle="true" id="accordion_toggle_3">
                             <span className="kt-accordion-title">
                               <div className="px-2 pb-2 text-xs font-normal text-muted-foreground leading-none">Resources</div>
                             </span>
@@ -391,41 +393,41 @@ function HomeContent() {
                               </svg>
                             </span>
                           </button>
-                          <div aria-labelledby="accordion_toggle_3" className="kt-accordion-content" id="accordion_content_3">
+                          <div suppressHydrationWarning aria-labelledby="accordion_toggle_3" className="kt-accordion-content" id="accordion_content_3">
                             <div className="kt-accordion-wrapper">
-                              <ul className="kt-accordion-menu gap-px" data-kt-accordion="true">
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                              <ul suppressHydrationWarning className="kt-accordion-menu gap-px" data-kt-accordion="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:bg-primary kt-accordion-selected:text-primary-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-setting-4 text-base kt-accordion-selected:text-muted-foreground"></i>
                                     About Metronic
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:bg-primary kt-accordion-selected:text-primary-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-notification text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Advertise
                                     <span className="kt-badge kt-badge-xs kt-badge-light kt-badge-success">Pro</span>
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:bg-primary kt-accordion-selected:text-primary-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-message-question text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Help
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:bg-primary kt-accordion-selected:text-primary-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-file-sheet text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Blog
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:bg-primary kt-accordion-selected:text-primary-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-user text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Careers
                                   </a>
                                 </li>
-                                <li className="kt-accordion-menu-item" data-kt-accordion-item="true">
+                                <li suppressHydrationWarning className="kt-accordion-menu-item" data-kt-accordion-item="true">
                                   <a className="kt-accordion-menu-link kt-accordion-selected:bg-primary kt-accordion-selected:text-primary-foreground text-sm font-normal h-8.5 px-2.5" href="#">
                                     <i className="ki-filled ki-notification-status text-base kt-accordion-selected:text-muted-foreground"></i>
                                     Press
