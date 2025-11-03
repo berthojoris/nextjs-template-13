@@ -1,6 +1,37 @@
 'use client';
 
+import { useEffect, useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+
 export default function Header() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  // Close dropdown on navigation
+  useEffect(() => {
+    setIsDropdownOpen(false);
+  }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
+  console.log('Dropdown state:', isDropdownOpen);
+
   return (
     <header className="flex items-stretch fixed z-10 top-0 start-0 end-0 shrink-0 bg-background h-(--header-height-mobile) lg:h-(--header-height) pe-[var(--removed-body-scroll-bar-size,0px)]">
       <div className="@container grow px-3 flex items-stretch justify-between gap-2.5">
@@ -43,9 +74,12 @@ export default function Header() {
             </button>
           </div>
           <div className="flex items-center gap-5">
-            <div suppressHydrationWarning data-kt-dropdown="true" data-kt-dropdown-offset="10px, 10px" data-kt-dropdown-offset-rtl="-20px, 10px" data-kt-dropdown-placement="bottom-end" data-kt-dropdown-placement-rtl="bottom-start" data-kt-dropdown-trigger="click">
+            <div ref={dropdownRef} className="relative" suppressHydrationWarning>
               <link as="image" href="/template/assets/media/avatars/300-2.png" rel="preload" />
-              <div className="kt-avatar size-7" data-kt-dropdown-toggle="true">
+              <div
+                className="kt-avatar size-7 cursor-pointer"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
                 <div className="kt-avatar-image">
                   <img alt="avatar" src="/template/assets/media/avatars/300-2.png" />
                 </div>
@@ -55,7 +89,8 @@ export default function Header() {
                   </svg>
                 </div>
               </div>
-              <div className="kt-dropdown-menu w-[250px]" data-kt-dropdown-menu="true">
+              {isDropdownOpen && (
+                <div className="kt-dropdown-menu w-[250px] absolute top-full right-0 mt-2 z-50 block bg-background border border-border rounded-lg shadow-lg" style={{ display: 'block' }}>
                 <div className="flex items-center justify-between px-2.5 py-1.5 gap-1.5">
                   <div className="flex items-center gap-2">
                     <link as="image" href="/template/assets/media/avatars/300-2.png" rel="preload" />
@@ -83,24 +118,11 @@ export default function Header() {
                   <li>
                     <div className="kt-dropdown-menu-separator"></div>
                   </li>
-                  <li suppressHydrationWarning data-kt-dropdown="true" data-kt-dropdown-placement="right-start" data-kt-dropdown-trigger="hover">
-                    <button className="kt-dropdown-menu-toggle" data-kt-dropdown-toggle="true">
+                  <li>
+                    <a className="kt-dropdown-menu-link" href="#">
                       <i className="ki-filled ki-notification-status"></i>
                       Mute notifications
-                      <span className="kt-dropdown-menu-indicator">
-                        <i className="ki-filled ki-right text-xs"></i>
-                      </span>
-                    </button>
-                    <div className="kt-dropdown-menu w-[192px]" data-kt-dropdown-menu="true">
-                      <ul className="kt-dropdown-menu-sub">
-                        <li><a className="kt-dropdown-menu-link" href="#">For 30 minutes</a></li>
-                        <li><a className="kt-dropdown-menu-link" href="#">For 1 hour</a></li>
-                        <li><a className="kt-dropdown-menu-link" href="#">For 4 hours</a></li>
-                        <li><a className="kt-dropdown-menu-link" href="#">Until tomorrow</a></li>
-                        <li><a className="kt-dropdown-menu-link" href="#">Until next week</a></li>
-                        <li><a className="kt-dropdown-menu-link" href="#">Custom date and time</a></li>
-                      </ul>
-                    </div>
+                    </a>
                   </li>
                   <li>
                     <a className="kt-dropdown-menu-link" href="#">
@@ -165,6 +187,7 @@ export default function Header() {
                   <a className="kt-btn kt-btn-outline justify-center w-full" href="#">Log out</a>
                 </div>
               </div>
+              )}
             </div>
             <button className="kt-btn kt-btn-outline" type="button">
               Create
