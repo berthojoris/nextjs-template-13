@@ -311,7 +311,7 @@ export default function SidebarMenu() {
       suppressHydrationWarning
     >
       <div className="flex items-center justify-between w-full px-5 h-(--sidebar-header-height) border-b border-border shrink-0">
-        <button
+        <div
           className="flex items-center gap-2 cursor-pointer focus:outline-none"
           data-discover="true"
           onClick={(e) => {
@@ -342,7 +342,7 @@ export default function SidebarMenu() {
           <span className="text-mono text-sm font-medium hidden lg:block">
             Thunder Team
           </span>
-        </button>
+        </div>
         <button className="kt-btn kt-btn-icon kt-btn-ghost" type="button">
           <i className="ki-filled ki-arrow-up-down"></i>
         </button>
