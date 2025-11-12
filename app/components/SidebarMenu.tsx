@@ -1,6 +1,7 @@
 "use client";
 
 import ActiveLink from "./ActiveLink";
+import Link from "next/link";
 import { useAccordion } from "./hooks/useAccordion";
 
 interface AccordionItem {
@@ -142,31 +143,31 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-plus text-base"></i>
               Create a custom feed
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
               New order received
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
               New customer registered
-            </a>
+            </Link>
           </li>
         </ul>
       ),
@@ -177,17 +178,17 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-plus text-base"></i>
               Create a community
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <img
@@ -196,11 +197,11 @@ export default function SidebarMenu() {
                 src="/template/assets/media/brand-logos/invision.svg"
               />
               Designers Hub
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <img
@@ -209,11 +210,11 @@ export default function SidebarMenu() {
                 src="/template/assets/media/brand-logos/react.svg"
               />
               React Js
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <img
@@ -222,7 +223,7 @@ export default function SidebarMenu() {
                 src="/template/assets/media/brand-logos/nodejs.svg"
               />
               Node Js
-            </a>
+            </Link>
           </li>
         </ul>
       ),
@@ -233,17 +234,17 @@ export default function SidebarMenu() {
       children: (
         <ul className="space-y-1">
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-setting-4 text-base"></i>
               About Metronic
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-notification text-base"></i>
@@ -251,43 +252,43 @@ export default function SidebarMenu() {
               <span className="ml-auto px-1.5 py-0.5 text-xs bg-green-100 text-green-700 rounded-md">
                 Pro
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-message-question text-base"></i>
               Help
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-file-sheet text-base"></i>
               Blog
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-user text-base"></i>
               Careers
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              href="/dashboard"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-notification-status text-base"></i>
               Press
-            </a>
+            </Link>
           </li>
         </ul>
       ),
