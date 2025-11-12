@@ -144,7 +144,7 @@ export default function SidebarMenu() {
         <ul className="space-y-1">
           <li>
             <Link
-              href="/dashboard"
+              href="/custom-feed/create"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-plus text-base"></i>
@@ -153,7 +153,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/custom-feed/new-order"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
@@ -162,7 +162,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/custom-feed/new-customer"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
@@ -179,7 +179,7 @@ export default function SidebarMenu() {
         <ul className="space-y-1">
           <li>
             <Link
-              href="/dashboard"
+              href="/communities/create"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-plus text-base"></i>
@@ -188,7 +188,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/communities/designers-hub"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <img
@@ -201,7 +201,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/communities/react-js"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <img
@@ -214,7 +214,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/communities/node-js"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <img
@@ -235,7 +235,7 @@ export default function SidebarMenu() {
         <ul className="space-y-1">
           <li>
             <Link
-              href="/dashboard"
+              href="/resources/about"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-setting-4 text-base"></i>
@@ -244,7 +244,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/resources/advertise"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-notification text-base"></i>
@@ -256,7 +256,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/resources/help"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-message-question text-base"></i>
@@ -265,7 +265,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/resources/blog"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-file-sheet text-base"></i>
@@ -274,7 +274,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/resources/careers"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-user text-base"></i>
@@ -283,7 +283,7 @@ export default function SidebarMenu() {
           </li>
           <li>
             <Link
-              href="/dashboard"
+              href="/resources/press"
               className="flex items-center gap-2 text-sm font-normal h-8.5 px-2.5 rounded-md hover:bg-muted hover:text-foreground transition-colors"
             >
               <i className="ki-filled ki-notification-status text-base"></i>
@@ -311,7 +311,14 @@ export default function SidebarMenu() {
       suppressHydrationWarning
     >
       <div className="flex items-center justify-between w-full px-5 h-(--sidebar-header-height) border-b border-border shrink-0">
-        <a className="flex items-center gap-2" data-discover="true" href="#">
+        <button
+          className="flex items-center gap-2 cursor-pointer focus:outline-none"
+          data-discover="true"
+          onClick={(e) => {
+            e.preventDefault();
+            // Add any functionality you want when clicking the logo
+          }}
+        >
           <button
             className="cursor-pointer group focus-visible:outline-hidden inline-flex items-center justify-center has-data-[arrow=true]:justify-between whitespace-nowrap font-medium ring-offset-background transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0 hover:bg-primary/90 data-[state=open]:bg-primary/90 rounded-md gap-1.25 text-xs [&_svg:not([class*=size-])]:size-3.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shrink-0 shadow-xs shadow-black/5 w-7 h-7 p-0 [[&_svg:not([class*=size-])]:size-3.5 bg-teal-600 text-white"
             data-slot="button"
@@ -335,7 +342,7 @@ export default function SidebarMenu() {
           <span className="text-mono text-sm font-medium hidden lg:block">
             Thunder Team
           </span>
-        </a>
+        </button>
         <button className="kt-btn kt-btn-icon kt-btn-ghost" type="button">
           <i className="ki-filled ki-arrow-up-down"></i>
         </button>
